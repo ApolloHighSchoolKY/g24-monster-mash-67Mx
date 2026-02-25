@@ -1,5 +1,32 @@
 public class MonsterMash{
   public static void main(String[] args){
+    //Monster monster = new monster(); Is not allowed
+    //Because Monster has a modified constructor but not
+    //a default constructor, Monster does not INHERIT a
+    //default contructor
 
+    Monster dracula = new Monster("Dracula");
+
+    System.out.println(dracula);
+
+    System.out.println(dracula.kill());
+
+    Monster sally = new Witch("Sally");
+
+    System.out.println(sally);
+
+    System.out.println(sally.kill());
+
+    System.out.println(((Witch)sally).fly());
+
+    //Declare a Monster of your new Type
+    //Declare your new Type of Monster
+    //Bonus challenge: Add an instance field
+
+    Monster godzilla = new Godzilla("Godzilla");
+
+    System.out.println(godzilla.kill());
+
+    System.out.println(((Godzilla)godzilla).stomp());
   }
 }
