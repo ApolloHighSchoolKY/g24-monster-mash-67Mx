@@ -22,7 +22,9 @@ public class Animal
 	     */
 	    public Animal()
 	    {
-
+			age=0;
+			alive=true;
+			sound="noise";
 	    }
 
 	    /**
@@ -31,7 +33,7 @@ public class Animal
 	    */
         public boolean isAlive()
     	{
-
+			return alive;
     	}
 
      	/**
@@ -39,7 +41,7 @@ public class Animal
      	*/
      	public void kill()
      	{
-
+			alive=false;
      	}
 
      	/**
@@ -48,8 +50,30 @@ public class Animal
      	*/
      	public String speak()
      	{
-     		return "";
+     		return ""+sound;
      	}
+
+		public void sound(String noise)
+		{
+			sound=noise;
+		}
+
+		public void eat(int grassBlades)
+		{
+			age+=grassBlades;
+		}
+
+		public int getAge()
+		{
+		return age;
+		}
+
+		public boolean equals(Animal leohrbum)
+		{
+			if (leohrbum.getAge()==getAge() && leohrbum.speak().equals(sound))
+				return true;
+			return false;
+		}
 
      	/**
      	* If you attempt to print the animal, if the animal is alive print its age and have it make
@@ -57,7 +81,9 @@ public class Animal
      	* @return String to be printed to the console.
      	*/
      	public String toString()
-     	{
-     		return "";
+     	{	
+			if(isAlive())
+     		return "The animal is "+ age + " years old, is alive, and says" + sound;
+			return "This diddy blud is dead";
      	}
 }

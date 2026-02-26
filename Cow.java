@@ -13,10 +13,21 @@
 
 public class Cow extends Animal
 {
+    private int milkProduced;
 
     public Cow()
     {
+        super.sound("Mooo");
+    }
 
+    public void eat(){
+        super.eat(1);
+        milkProduced++;
+    }
+
+    public String toString()
+    {
+        return super.toString();
     }
 
 
