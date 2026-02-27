@@ -22,10 +22,15 @@ public class Animal
 	     */
 	    public Animal()
 	    {
+			this("Sound");
+			
+	    }
+		public Animal(String sound)
+		{
 			age=0;
 			alive=true;
-			sound="noise";
-	    }
+			this.sound=sound;
+		}
 
 	    /**
 	    * Check whether the animal is alive or not.
@@ -53,10 +58,7 @@ public class Animal
      		return ""+sound;
      	}
 
-		public void sound(String noise)
-		{
-			sound=noise;
-		}
+		
 
 		public void eat(int grassBlades)
 		{
@@ -83,7 +85,7 @@ public class Animal
      	public String toString()
      	{	
 			if(isAlive())
-     		return "The animal is "+ age + " years old, is alive, and says" + sound;
-			return "This diddy blud is dead";
+     		return "Age: "+ age + ", Sound:" + sound;
+			return "Age: "+ age + " (dead)";
      	}
 }

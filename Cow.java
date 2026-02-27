@@ -13,11 +13,12 @@
 
 public class Cow extends Animal
 {
-    private int milkProduced;
+    private double milkProduced;
 
     public Cow()
     {
-        super.sound("Mooo");
+        super("Moo");
+        milkProduced=0;
     }
 
     public void eat(){
@@ -25,9 +26,16 @@ public class Cow extends Animal
         milkProduced++;
     }
 
+    public String speak()
+    {
+        return "The cow says " + ;
+    }
+
     public String toString()
     {
-        return super.toString();
+        if(super.isAlive())_
+        return super.toString() + "\nMilk Produced: " + milkProduced;
+        return "cow lived to be " + super.getAge()+ " and produced "+ milkProduced+ " gallons of milk.";
     }
 
 
